@@ -1,32 +1,33 @@
 import React from 'react';
 
-import ImageUploader from 'react-images-upload';
+import Converter from './Components/Converter';
 
 class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            pictures: []
+            pictures: ""
         }
-        this.onDrop = this.onDrop.bind(this);
     }
 
-    onDrop(picture) {
-        this.setState({
-            pictures: this.state.pictures.concat(picture)
-        })
-    }
+    handleChanges = (e) => {
+		this.setState({
+				...this.state.pictures,
+				[e.target.name]: e.target.value,
+		});
+	};
 
     render() {
         return (
             <div>
-                <ImageUploader
-                    withIcon={true}
-                    buttonText='Choose images'
-                    onChange={this.onDrop}
-                    imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                    maxFileSize={5242880}
+                <input
+                type="string"
+                name="pictures"
+                value={this.state.pictures}
+                onChange={this.handleChanges}
+                placeholder="Image URL"
                 />
+                <Converter pictures={this.state.pictures} />
             </div>
         )
     }
