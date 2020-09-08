@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { trackPromise } from 'react-promise-tracker';
 
 class Converter extends React.Component {
     constructor(props) {
@@ -16,23 +17,25 @@ class Converter extends React.Component {
 
     handleConvert() {
         this.setState({loading: true})
-        axios({
-            "method":"POST",
-            "url":"https://image-to-text2.p.rapidapi.com/cloudVision/imageToText",
-            "headers":{
-            "content-type":"application/json",
-            "x-rapidapi-host":"image-to-text2.p.rapidapi.com",
-            "x-rapidapi-key":"3acd025854mshb88d4616eac0063p19e3a5jsn722c3bcc8795",
-            "accept":"application/json",
-            "useQueryString":true
-            },"params":{
-            "source": this.props.pictures,
-            "sourceType":"url"
-            },"data":{
-            "source": this.props.pictures,
-            "sourceType":"url"
-            }
+        trackPromise(
+            axios({
+                "method":"POST",
+                "url":"https://image-to-text2.p.rapidapi.com/cloudVision/imageToText",
+                "headers":{
+                "content-type":"application/json",
+                "x-rapidapi-host":"image-to-text2.p.rapidapi.com",
+                "x-rapidapi-key":"3acd025854mshb88d4616eac0063p19e3a5jsn722c3bcc8795",
+                "accept":"application/json",
+                "useQueryString":true
+                },"params":{
+                "source": this.props.pictures,
+                "sourceType":"url"
+                },"data":{
+                "source": this.props.pictures,
+                "sourceType":"url"
+                }
             })
+        )
             .then((response)=>{
               console.log(response)
               this.setState({
