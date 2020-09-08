@@ -5,12 +5,17 @@ class Converter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pictures: this.props.pictures
+            pictures: this.props.pictures,
+            convertedText: {
+                text: "",
+            },
+            loading: false
         }
         this.handleConvert = this.handleConvert.bind(this)
     }
 
     handleConvert() {
+        this.setState({loading: true})
         axios({
             "method":"POST",
             "url":"https://image-to-text2.p.rapidapi.com/cloudVision/imageToText",
@@ -30,6 +35,10 @@ class Converter extends React.Component {
             })
             .then((response)=>{
               console.log(response)
+              this.setState({
+                    loading: true,
+                    convertedText: response.data
+                })
             })
             .catch((error)=>{
               console.log(error)
@@ -40,7 +49,7 @@ class Converter extends React.Component {
         return (
             <div>
                 <button onClick={this.handleConvert}>CONVERT</button>
-                <button onClick={this.handleProps}>PROPS</button>
+                <h2> {this.state.convertedText.text} </h2>
             </div>
         )
     }
