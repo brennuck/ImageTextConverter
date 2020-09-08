@@ -1,21 +1,23 @@
 import React from 'react';
 import axios from 'axios';
 import { trackPromise } from 'react-promise-tracker';
+import LoadingIndicator from '../index.js';
+
+import './Converter.scss';
 
 class Converter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             pictures: this.props.pictures,
-            convertedText: {
-                text: "",
-            },
+            text: "Converted Text",
             loading: false
         }
         this.handleConvert = this.handleConvert.bind(this)
     }
 
     handleConvert() {
+        this.setState({ text: "" })
         this.setState({loading: true})
         trackPromise(
             axios({
@@ -40,7 +42,7 @@ class Converter extends React.Component {
               console.log(response)
               this.setState({
                     loading: true,
-                    convertedText: response.data
+                    text: response.data
                 })
             })
             .catch((error)=>{
@@ -50,9 +52,12 @@ class Converter extends React.Component {
 
     render() {
         return (
-            <div>
-                <button onClick={this.handleConvert}>CONVERT</button>
-                <h2> {this.state.convertedText.text} </h2>
+            <div className="converterContainer">
+                <button className="button" onClick={this.handleConvert}>CONVERT</button>
+                <div className="textContainer">
+                    <h2> {this.state.text} </h2>
+                    <LoadingIndicator />
+                </div>
             </div>
         )
     }

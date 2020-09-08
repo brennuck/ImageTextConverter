@@ -1,0 +1,20 @@
+.textContainer {
+    background: #f2f5fa;
+    width: 79%;
+    height: 50%;
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.converterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button {
+    margin-top: 10px;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Converter from './Components/Converter';
+import './App.scss';
 
 class App extends React.Component {
     constructor() {
@@ -19,13 +20,15 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="appContainer">
+                <h1 className="name">IMG2TXT</h1>
                 <input
                 type="string"
                 name="pictures"
                 value={this.state.pictures}
                 onChange={this.handleChanges}
                 placeholder="Image URL"
+                className="input"
                 />
                 <Converter pictures={this.state.pictures} />
             </div>

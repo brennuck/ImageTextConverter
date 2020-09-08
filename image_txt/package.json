@@ -9,6 +9,7 @@
     "axios": "^0.20.0",
     "fuctbase64": "^1.4.0",
     "image-to-base64": "^2.1.1",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-images-upload": "^1.2.8",

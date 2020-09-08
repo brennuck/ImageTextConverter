@@ -21,7 +21,7 @@ const LoadingIndicator = (props) => {
 			>
 				<Loader
 					type="ThreeDots"
-					color="#2BAD60"
+					color="black"
 					height="100"
 					width="100"
 				/>
@@ -30,10 +30,11 @@ const LoadingIndicator = (props) => {
 	);
 };
 
+export default LoadingIndicator;
+
 ReactDOM.render(
 	<div>
 		<App />
-		<LoadingIndicator />
 	</div>,
 	document.getElementById("root")
 );
