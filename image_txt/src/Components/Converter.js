@@ -42,7 +42,7 @@ class Converter extends React.Component {
               console.log(response)
               this.setState({
                     loading: true,
-                    text: response.data
+                    text: response.data.text
                 })
             })
             .catch((error)=>{
