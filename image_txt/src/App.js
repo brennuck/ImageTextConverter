@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { trackPromise } from 'react-promise-tracker';
-import LoadingIndicator from './index.js';
+// import LoadingIndicator from './index.js';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import './App.scss';
@@ -88,10 +88,9 @@ class App extends React.Component {
                 <h4 className="heres-your-text">Here's your text</h4>
                     <div className="textContainer">
                         <h2 className="text"> {this.state.text} </h2>
-                        <LoadingIndicator />
+                        {/* <LoadingIndicator /> */}
                     </div>
                     <CopyToClipboard onCopy={this.onCopy} text={this.state.text}>
-                        
                         {this.state.copied ? <h4 className="copied-text">Copied to clipboard!</h4> : <button className="copy-text">Copy Text</button>}
                     </CopyToClipboard>
                 </div>
