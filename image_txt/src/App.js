@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { trackPromise } from 'react-promise-tracker';
+import LoadingIndicator from './index.js';
 
-import Converter from './Components/Converter';
 import './App.scss';
 
 import logo from './Img2TxtLogo.png'
@@ -12,7 +12,7 @@ class App extends React.Component {
         super();
         this.state = {
             pictures: "",
-            text: "Converted Text",
+            text: "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?",
             loading: false
         }
         this.handleConvert = this.handleConvert.bind(this)
@@ -77,7 +77,14 @@ class App extends React.Component {
                         <button className="blankButton"></button>
                         <button className="button" onClick={this.handleConvert}>Convert</button>
                     </div>
-                    {/* <Converter pictures={this.state.pictures} /> */}
+                </div>
+                <div className="converterTextContainer">
+                <h4 className="heres-your-text">Here's your text</h4>
+                    <div className="textContainer">
+                        <h2 className="text"> {this.state.text} </h2>
+                        <LoadingIndicator />
+                    </div>
+                    <button className="copy-text">Copy Text</button>
                 </div>
             </div>
         )

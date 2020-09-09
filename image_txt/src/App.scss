@@ -51,5 +51,107 @@
     border-radius: 12px;
     background-color: #FFFFFF;
     box-shadow: 0 5px 10px 0 rgba(57,71,77,0.05);
-    margin-top: 103px;
+    margin-top: 40px;
+}
+
+.textContainer {
+    height: 138px;
+    width: 650px;
+    background-color: #FFFFFF;
+    color: #7B7D81;
+    font-family: "DM Sans";
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 23px;
+    margin: 0 0 0 78px;
+}
+
+.text {
+    background-color: #FFFFFF;
+    padding: 19px 39px 17px 25px;
+    font-weight: 100;
+    font-size: 14px;
+
+    box-sizing: border-box;
+    border: 1px solid #BEBEBE;
+    border-radius: 8px;
+    height: 138px;
+}
+
+.converterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    margin-top: 31px;
+}
+
+.button {
+    height: 45px;
+    width: 157px;
+    border-radius: 7px;
+    background-color: #3598FF;
+    border: none;
+    color: #FFFFFF;
+    font-family: "DM Sans";
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+    margin-left: 274px;
+}
+
+.blankButton {
+    height: 45px;
+    width: 219px;
+    border-radius: 7px;
+    background-color: #EFEFEF;
+    color: #2E3C4C;
+    font-family: "DM Sans";
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+    border: none;
+}
+
+.converterTextContainer {
+    height: 366px;
+    width: 806px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 10px 0 rgba(57,71,77,0.05);
+    margin-top: 38px;
+}
+
+.heres-your-text {
+    height: 28px;
+    width: 220px;
+    color: #2E3C4C;
+    font-family: "DM Sans";
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 22px;
+    background: #FFFFFF;
+    padding: 50px 0 14px 78px;
+}
+
+.copy-text {
+    height: 45px;
+    width: 157px;
+    border-radius: 7px;
+    background-color: #3598FF;
+    border: none;
+    color: #FFFFFF;
+    font-family: "DM Sans";
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+    margin: 31px 0 0 571px;
 }
