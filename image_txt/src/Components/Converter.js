@@ -52,8 +52,7 @@ class Converter extends React.Component {
 
     render() {
         return (
-            <div className="converterContainer">
-                <button className="button" onClick={this.handleConvert}>CONVERT</button>
+            <div>
                 <div className="textContainer">
                     <h2> {this.state.text} </h2>
                     <LoadingIndicator />
