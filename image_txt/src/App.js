@@ -91,7 +91,8 @@ class App extends React.Component {
                         <LoadingIndicator />
                     </div>
                     <CopyToClipboard onCopy={this.onCopy} text={this.state.text}>
-                        <button className="copy-text">Copy Text</button>
+                        
+                        {this.state.copied ? <h4 className="copied-text">Copied to clipboard!</h4> : <button className="copy-text">Copy Text</button>}
                     </CopyToClipboard>
                 </div>
             </div>
