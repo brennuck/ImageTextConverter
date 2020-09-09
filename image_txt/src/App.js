@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { trackPromise } from 'react-promise-tracker';
 import LoadingIndicator from './index.js';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import './App.scss';
 
@@ -13,7 +14,8 @@ class App extends React.Component {
         this.state = {
             pictures: "",
             text: "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?",
-            loading: false
+            loading: false,
+            copied: false,
         }
         this.handleConvert = this.handleConvert.bind(this)
     }
@@ -23,6 +25,10 @@ class App extends React.Component {
 				...this.state.pictures,
 				[e.target.name]: e.target.value,
 		});
+    };
+
+    onCopy = () => {
+        this.setState({copied: true});
     };
     
     handleConvert() {
@@ -84,7 +90,9 @@ class App extends React.Component {
                         <h2 className="text"> {this.state.text} </h2>
                         <LoadingIndicator />
                     </div>
-                    <button className="copy-text">Copy Text</button>
+                    <CopyToClipboard onCopy={this.onCopy} text={this.state.text}>
+                        <button className="copy-text">Copy Text</button>
+                    </CopyToClipboard>
                 </div>
             </div>
         )
