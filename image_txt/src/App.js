@@ -27,6 +27,13 @@ class App extends React.Component {
 		});
     };
 
+    handleTextChanges = (e) => {
+		this.setState({
+				...this.state.text,
+				[e.target.name]: e.target.value,
+		});
+    };
+
     onCopy = () => {
         this.setState({copied: true});
     };
@@ -85,8 +92,9 @@ class App extends React.Component {
                 <div className="converterTextContainer">
                 <h4 className="heres-your-text">Here's your text</h4>
                     <div className="textContainer">
-                        <h2 className="text"> {this.state.text} </h2>
-                        {/* <LoadingIndicator /> */}
+                        <textarea className="text" onChange={this.handleTextChanges} name="text">
+                            {this.state.text}
+                        </textarea>
                     </div>
                     <CopyToClipboard onCopy={this.onCopy} text={this.state.text}>
                         {this.state.copied ? <h4 className="copied-text">Copied to clipboard!</h4> : <button className="copy-text">Copy Text</button>}

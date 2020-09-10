@@ -113,6 +113,13 @@
     border: 1px solid #BEBEBE;
     border-radius: 8px;
     height: 138px;
+    width: 650px;
+    resize: none;
+    background-color: #FFFFFF;
+    color: #7B7D81;
+    font-family: "DM Sans";
+    letter-spacing: 0;
+    line-height: 23px;
 
     @media screen and (max-width: 615px) {
         height: 245px;
