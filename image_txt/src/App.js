@@ -54,9 +54,8 @@ class App extends React.Component {
             })
         )
             .then((response)=>{
-              console.log(response)
               this.setState({
-                    loading: true,
+                    loading: false,
                     text: response.data.text
                 })
             })
@@ -81,7 +80,7 @@ class App extends React.Component {
                     />
                     <div className="converterContainer">
                         <button className="blankButton"></button>
-                        <button className="button" onClick={this.handleConvert}>Convert</button>
+                        {this.state.loading ? <button className="button">Converting...</button> : <button className="button" onClick={this.handleConvert}>Convert</button>}
                     </div>
                 </div>
                 <div className="converterTextContainer">
