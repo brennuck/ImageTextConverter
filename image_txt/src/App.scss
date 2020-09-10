@@ -121,8 +121,13 @@
     letter-spacing: 0;
     line-height: 23px;
 
+    @media screen and (max-width: 715px) {
+        width: 550px;
+    }
+
     @media screen and (max-width: 615px) {
         height: 245px;
+        width: 300px;
     }
 }
 
