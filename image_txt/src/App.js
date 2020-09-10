@@ -32,7 +32,6 @@ class App extends React.Component {
     };
     
     handleConvert() {
-        this.setState({ text: "" })
         this.setState({loading: true})
         trackPromise(
             axios({
