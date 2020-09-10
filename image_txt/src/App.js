@@ -92,7 +92,7 @@ class App extends React.Component {
                 <div className="converterTextContainer">
                 <h4 className="heres-your-text">Here's your text</h4>
                     <div className="textContainer">
-                        <textarea className="text" onChange={this.handleTextChanges} name="text">
+                        <textarea className="text" onChange={this.handleTextChanges} name="text" spellCheck="false">
                             {this.state.text}
                         </textarea>
                     </div>
