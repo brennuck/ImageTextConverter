@@ -60,7 +60,6 @@ class App extends React.Component {
             })
         )
             .then((response)=>{
-                console.log(response)
               this.setState({
                     loading: false,
                     text: response.data.text
@@ -72,7 +71,6 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.state.text)
         return (
             <div className="appContainer">
                 <img src={logo} alt="logo" className="name" />
