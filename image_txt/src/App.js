@@ -60,6 +60,7 @@ class App extends React.Component {
             })
         )
             .then((response)=>{
+                console.log(response)
               this.setState({
                     loading: false,
                     text: response.data.text
@@ -71,6 +72,7 @@ class App extends React.Component {
     }
 
     render() {
+        console.log(this.state.text)
         return (
             <div className="appContainer">
                 <img src={logo} alt="logo" className="name" />
@@ -92,7 +94,7 @@ class App extends React.Component {
                 <div className="converterTextContainer">
                 <h4 className="heres-your-text">Here's your text</h4>
                     <div className="textContainer">
-                        <textarea className="text" onChange={this.handleTextChanges} name="text" spellCheck="false">
+                        <textarea id="text" className="text" onChange={this.handleTextChanges} name="text" spellCheck="false" value={this.state.text}>
                             {this.state.text}
                         </textarea>
                     </div>
